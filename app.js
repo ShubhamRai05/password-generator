@@ -1,3 +1,4 @@
+// Values 
 const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 const lowerCase = "abcdefghijklmnopqrstuvwxyz"
 const numberSet = "1234567890"
@@ -12,10 +13,12 @@ const numberInput = document.querySelector("#numbers")
 const symbolInput = document.querySelector("#symbols")
 const generateBtn = document.querySelector("#btn")
 
+// it will create a random set of data 
 const getRandomData = (dataSet) => {
     return dataSet[Math.floor(Math.random() * dataSet.length)]
 }
 
+// it will generate the passwords
 const generatePassword = (password = "") => {
     if (upperInput.checked) {
         password += getRandomData(upperCase) 
@@ -29,12 +32,13 @@ const generatePassword = (password = "") => {
     if (symbolInput.checked) {
         password += getRandomData(symbolSet)
     }
-    // console.log( password);
     if(password.length < totalChar.value){
         return generatePassword(password)
     }
-    passwordBox.innerText =  truncateString(password , totalChar.value)
+    passwordBox.innerText =  truncateString(password , totalChar.value) 
+    // it is working like a recursive function
 }
+
 
 generateBtn.addEventListener("click", () => {
     generatePassword()
