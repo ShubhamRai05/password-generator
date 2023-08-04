@@ -33,14 +33,12 @@ const generatePassword = (password = "") => {
     if(password.length < totalChar.value){
         return generatePassword(password)
     }
-    // console.log(password , password.length);
     passwordBox.innerText =  truncateString(password , totalChar.value)
 }
 
 generateBtn.addEventListener("click", () => {
     generatePassword()
 })
-// generatePassword()
 
 
 const truncateString = (str , num)=>{
