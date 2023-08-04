@@ -45,6 +45,7 @@ generateBtn.addEventListener("click", () => {
 })
 
 
+// this function is triming the extra password values and making it as per user requirment
 const truncateString = (str , num)=>{
 if(str.length > num){
     let substr = str.substring(0,num)
