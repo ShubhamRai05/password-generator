@@ -18,22 +18,23 @@ const getRandomData = (dataSet) => {
 
 const generatePassword = (password = "") => {
     if (upperInput.checked) {
-        password += getRandomData(upperCase) + getRandomData(upperCase)
+        password += getRandomData(upperCase) 
     }
     if (lowerInput.checked) {
-        password += getRandomData(lowerCase)+getRandomData(lowerCase)
-    }
+        password += getRandomData(lowerCase)
+    } 
     if (numberInput.checked) {
-        password += getRandomData(numberSet) + getRandomData(numberSet)
+        password += getRandomData(numberSet) 
     }
     if (symbolInput.checked) {
-        password += getRandomData(symbolSet) +  getRandomData(symbolSet) 
+        password += getRandomData(symbolSet)
     }
     // console.log( password);
     if(password.length < totalChar.value){
         return generatePassword(password)
     }
-    console.log(password , password.length);
+    // console.log(password , password.length);
+    passwordBox.innerText =  truncateString(password , totalChar.value)
 }
 
 generateBtn.addEventListener("click", () => {
@@ -42,7 +43,16 @@ generateBtn.addEventListener("click", () => {
 // generatePassword()
 
 
-
+const truncateString = (str , num)=>{
+if(str.length > num){
+    let substr = str.substring(0,num)
+    return substr
+}
+else
+{
+    return str
+}
+}
 
 
 
