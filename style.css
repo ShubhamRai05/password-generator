@@ -60,3 +60,18 @@ label {
     margin-top: 10px;
     border-radius: 5px;
 }
+
+.title
+{
+    font-size: 2rem;
+    font-family: fantasy;
+    position: absolute;
+    bottom: 80%;
+    color: aliceblue;
+    letter-spacing: 5px;
+    transition: all ease-in-out 0.4s;
+}
+.title:hover
+{
+    color: #131415;
+}
